@@ -97,11 +97,6 @@ arabic_dictionary = {
     30: "ز"
 }
 
-
-@app.get("/")
-async def root():
-    return {"message": "Server is running"}
-
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
@@ -198,6 +193,6 @@ async def websocket_endpoint(websocket: WebSocket):
             break
     await websocket.close()
 
-# if __name__ == "__main__":
-#     import uvicorn
-#     uvicorn.run(app, host="0.0.0.0", port=8000)
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)

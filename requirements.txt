@@ -1,5 +1,0 @@
-fastapi[all]
-opencv-python-headless
-mediapipe
-numpy
-scikit-learn
