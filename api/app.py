@@ -9,6 +9,9 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 
+model_path = os.path.join(os.getcwd(), 'model_v4.p')
+model_arabic_path = os.path.join(os.getcwd(), 'model_arabic-v1.p')
+
 
 # CORS to allow React frontend to communicate with the backend
 app.add_middleware(
@@ -20,11 +23,11 @@ app.add_middleware(
 )
 
 # Load the model
-model_dict = pickle.load(open('./model_v4.p', 'rb'))
+model_dict = pickle.load(open(model_path, 'rb'))
 model = model_dict['model']
 
 #Load arabic model
-model_arabic_dict = pickle.load(open('./model_arabic-v1.p', 'rb'))
+model_arabic_dict = pickle.load(open(model_arabic_path, 'rb'))
 model_arabic = model_arabic_dict['model']
 
 # Mediapipe setup
