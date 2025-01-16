@@ -97,6 +97,10 @@ arabic_dictionary = {
     30: "ز"
 }
 
+@app.get("/")
+async def root():
+    return {"message": "Server is running"}
+
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
